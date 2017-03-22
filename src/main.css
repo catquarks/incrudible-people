@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+#App {
+  text-align: center;
+}
+
+#App-header {
+  background-color: #222;
+  padding: 20px;
+  color: white;
+}
+
+#app-body {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#people-list {
+	width: 20em;
+
+}
+
+.people-detail {
+	width: 20em;
+
+}
