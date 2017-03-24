@@ -13,6 +13,13 @@ export function fetchPeople(){
 	})
 }
 
+export function filterPeople(people){
+	return({
+		type: 'FILTER_PEOPLE',
+		payload: people
+	})
+}
+
 export function changeActivePerson(person){
 	return({
 		type: 'CHANGE_ACTIVE_PERSON',

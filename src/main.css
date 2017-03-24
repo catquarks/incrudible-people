@@ -1,7 +1,31 @@
 body {
-  margin: 0;
+	font-size: 1rem;
+	background: url('images/music-bg.jpg') fixed;
+	/* background image from pixabay.com */
+  margin: auto;
   padding: 0;
   font-family: sans-serif;
+}
+
+strong {
+	color: rgb(20, 20, 180);
+}
+
+.link {
+	color: blue;
+	cursor: pointer;
+}
+
+.link:hover {
+	color: #eaa;
+}
+
+.link:active {
+	color: #0ac;
+}
+
+.crud {
+	font-style: italic;
 }
 
 #App {
@@ -9,24 +33,56 @@ body {
 }
 
 #App-header {
-  background-color: #222;
-  padding: 20px;
-  color: white;
+	background: rgba(256, 256, 256, 0.8);
+	padding: 0.1em;
+	margin: 1em;
+	border-radius: 1em;
+  color: #222;
+
 }
 
 #app-body {
+	padding: 1em;
+	margin: 1em;
+	border-radius: 2em;
+	background: rgba(256, 256, 256, 0.8);
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-around;
+	align-items: center;
 }
 
 #people-list {
+	background: rgba(170, 40, 70, 0.4);
+	padding: 1em;
+	border-radius: 2.5em;
+	border: 1px black solid;
 	width: 20em;
+	height: 30em;
+}
+
+.people-names {
+	width: inherit;
+	height: 20em;
+	overflow: auto;
 
 }
 
-.people-detail {
-	width: 20em;
+.person-detail {
+	background: rgba(100, 160, 120, 0.4);
+	border-radius: 2.5em;
+	border: 1px black solid;
+	width: 24em;
+	padding: 2em;
+}
 
+.person-data {
+}
+
+#new-person {
+	background: rgba(70, 90, 190, 0.4);
+	padding: 2em;
+	border-radius: 2.5em;
+	border: 1px black solid;	
 }

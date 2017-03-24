@@ -1,4 +1,4 @@
-export default function ActivePersonReducer(state={name: null}, action) {
+export default function ActivePersonReducer(state={}, action) {
 	switch(action.type) {
 		case 'CHANGE_ACTIVE_PERSON':
 			return action.payload
