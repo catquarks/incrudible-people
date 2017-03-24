@@ -19,5 +19,6 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "deploy": "npm run build && deploy-site incrudible-people/build incrudible-people"
-  }
+  },
+    "homepage": "http://comfortcat.xyz/incrudible-people"
 }

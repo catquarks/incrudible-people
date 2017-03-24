@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actions from '../actions'
+import BaseUrl from './base_url'
 
 class EditForm extends Component {
 	constructor(props){
@@ -29,7 +30,7 @@ class EditForm extends Component {
 		const instrument = this.state.newInstrument
 		const favoriteCity = this.state.newFavoriteCity
 
-		const updatedPerson = fetch(`http://localhost:3000/api/v1/people/${this.props.id}`, {
+		const updatedPerson = fetch(`${<BaseUrl />}/people/${this.props.id}`, {
 			method: 'PUT',
 			headers: {
 				'Accept': 'application/json',
@@ -118,13 +119,5 @@ function mapDispatchToProps(dispatch){
 		actions: bindActionCreators(actions, dispatch)
 	})
 }
-
-// function mapStateToProps(state){
-// 	return({
-// 		name: state.activePerson.name,
-// 		instrument: state.activePerson.instrument,
-// 		favoriteCity: state.activePerson.favorite_city,
-// 	})
-// }
 
 export default connect(null, mapDispatchToProps)(EditForm)

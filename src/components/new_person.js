@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actions from '../actions'
+import BaseUrl from './base_url'
 
 class NewPerson extends Component {
 	constructor(props){
@@ -21,7 +22,7 @@ class NewPerson extends Component {
 		const instrument = this.state.instrument
 		const favoriteCity = this.state.favoriteCity
 
-		const updatedPerson = fetch('http://localhost:3000/api/v1/people', {
+		const updatedPerson = fetch(`${<BaseUrl />}/people`, {
 			method: 'POST',
 			headers: {
 				'Accept': 'application/json',

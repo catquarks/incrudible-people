@@ -1,3 +1,3 @@
-# MeetThisPerson
+# inCRUDible People
 
-Interesting people to meet!
+An app for Creating, Reading, Updating, and Destroying truly inCRUDible people!
