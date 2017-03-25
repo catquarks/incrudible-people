@@ -1,0 +1,121 @@
+$baby-blue: rgb(140, 200, 255);
+
+
+body {
+	font-size: 1rem;
+	background: url('images/music-bg.jpg') fixed;
+	/* background image from pixabay.com */
+  margin: auto;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+form {
+	margin: auto;
+	width: 100%;
+}
+
+input[type=submit]{
+	cursor: pointer;
+	font-size: 1.5em;
+	border: 1px solid black;
+	border-radius: 1em;
+	background: rgb(140, 200, 255);
+	display: block;
+	padding: 0.3em;
+	margin: 0.5em auto 0em auto;
+}
+
+
+
+strong {
+	color: $baby-blue;
+}
+
+.link {
+	color: #fff;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.link:hover {
+	color: #eaa;
+}
+
+.link:active {
+	color: #0ac;
+}
+
+.crud {
+	font-style: italic;
+}
+
+#App {
+  text-align: center;
+}
+
+#App-header {
+	background: rgba(90, 5, 80, 0.4);
+	padding: 0.1em;
+	margin: 1em;
+	border-radius: 1em;
+  color: #fff;
+
+}
+
+#app-body {
+	padding: 1em;
+	margin: 1em;
+	border-radius: 2em;
+	background: inherit;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#people-list {
+	background: rgba(170, 40, 70, 1);
+	padding: 1em;
+	border-radius: 2.5em;
+	border: 1px black solid;
+	width: 20em;
+	height: 30em;
+}
+
+.people-names {
+	width: inherit;
+	height: 20em;
+	overflow: auto;
+
+}
+
+.person-detail {
+	$background-color: rgba(100, 160, 120, 1);
+	background: $background-color;
+	border-radius: 2.5em;
+	border: 1px black solid;
+	width: 24em;
+	padding: 2em;
+
+	input[type=submit]{
+		background: darken($background-color, 12%);
+	}
+}
+
+
+.person-data {
+}
+
+#new-person {
+	$background-color: rgba(70, 90, 190, 1);
+	background: $background-color;
+	padding: 2em;
+	border-radius: 2.5em;
+	border: 1px black solid;
+
+	input[type=submit]{
+		background: lighten($background-color, 25%);
+	}
+}
