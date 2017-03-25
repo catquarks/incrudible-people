@@ -1,89 +1,89 @@
 body {
-	font-size: 1rem;
-	background: url('images/music-bg.jpg') fixed;
-	/* background image from pixabay.com */
+  font-size: 1rem;
+  background: url("images/music-bg.jpg") fixed;
+  /* background image from pixabay.com */
   margin: auto;
   padding: 0;
-  font-family: sans-serif;
-}
+  font-family: sans-serif; }
+
+form {
+  margin: auto;
+  width: 100%; }
+
+input[type=submit] {
+  cursor: pointer;
+  font-size: 1.5em;
+  border: 1px solid black;
+  border-radius: 1em;
+  background: #8cc8ff;
+  display: block;
+  padding: 0.3em;
+  margin: 0.5em auto 0em auto; }
 
 strong {
-	color: rgb(140, 200, 256);
-}
+  color: #8cc8ff; }
 
 .link {
-	color: blue;
-	cursor: pointer;
-	text-decoration: none;
-}
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none; }
 
 .link:hover {
-	color: #eaa;
-}
+  color: #eaa; }
 
 .link:active {
-	color: #0ac;
-}
+  color: #0ac; }
 
 .crud {
-	font-style: italic;
-}
+  font-style: italic; }
 
 #App {
-  text-align: center;
-}
+  text-align: center; }
 
 #App-header {
-	background: rgba(90, 5, 80, 0.4);
-	padding: 0.1em;
-	margin: 1em;
-	border-radius: 1em;
-  color: #fff;
-
-}
+  background: rgba(90, 5, 80, 0.4);
+  padding: 0.1em;
+  margin: 1em;
+  border-radius: 1em;
+  color: #fff; }
 
 #app-body {
-	padding: 1em;
-	margin: 1em;
-	border-radius: 2em;
-	background: inherit;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: center;
-}
+  padding: 1em;
+  margin: 1em;
+  border-radius: 2em;
+  background: inherit;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center; }
 
 #people-list {
-	background: rgba(170, 40, 70, 0.9);
-	padding: 1em;
-	border-radius: 2.5em;
-	border: 1px black solid;
-	width: 20em;
-	height: 30em;
-}
+  background: #aa2846;
+  padding: 1em;
+  border-radius: 2.5em;
+  border: 1px black solid;
+  width: 20em;
+  height: 30em; }
 
 .people-names {
-	width: inherit;
-	height: 20em;
-	overflow: auto;
-
-}
+  width: inherit;
+  height: 20em;
+  overflow: auto; }
 
 .person-detail {
-	background: rgba(100, 160, 120, 0.9);
-	border-radius: 2.5em;
-	border: 1px black solid;
-	width: 24em;
-	padding: 2em;
-}
-
-.person-data {
-}
+  background: #64a078;
+  border-radius: 2.5em;
+  border: 1px black solid;
+  width: 24em;
+  padding: 2em; }
+  .person-detail input[type=submit] {
+    background: #4c7b5b; }
 
 #new-person {
-	background: rgba(70, 90, 190, 0.9);
-	padding: 2em;
-	border-radius: 2.5em;
-	border: 1px black solid;	
-}
+  background: #465abe;
+  padding: 2em;
+  border-radius: 2.5em;
+  border: 1px black solid; }
+  #new-person input[type=submit] {
+    background: #a4aedf; }

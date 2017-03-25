@@ -4,6 +4,8 @@
   "private": true,
   "proxy": "http://localhost:3000/api/v1",
   "devDependencies": {
+    "nodemon": "^1.11.0",
+    "npm-sass": "^2.0.0",
     "react-scripts": "0.9.5"
   },
   "dependencies": {
@@ -18,7 +20,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "npm run build && deploy-site incrudible-people/build incrudible-people"
+    "deploy": "npm run build && deploy-site incrudible-people/build incrudible-people",
+    "build-css": "npm-sass ./src/_main.scss > ./src/main.css",
+    "watch-css": "nodemon -e scss -x  \"npm run build-css\""
   },
-    "homepage": "http://comfortcat.xyz/incrudible-people"
+  "homepage": "http://comfortcat.xyz/incrudible-people"
 }

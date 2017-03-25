@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actions from '../actions'
-import EditForm from './edit_form'
+import EditPerson from './edit_person'
 import EditLink from './edit_link'
 import PersonData from './person_data'
 import DeleteLink from './delete_link'
@@ -70,7 +70,7 @@ class PersonDetail extends Component {
 						favoriteCity={this.props.favoriteCity }
 						id={ this.props.id }
 					/> :
-					<EditForm
+					<EditPerson
 						name={ this.props.name }
 						instrument={ this.props.instrument }
 						favoriteCity={this.props.favoriteCity }

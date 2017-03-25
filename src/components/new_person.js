@@ -79,30 +79,39 @@ class NewPerson extends Component {
 	    		onSubmit={ (e) => { this.handleSubmit(e) } }
 	  		>
 					<p>
-						Name: <input
+						<label htmlFor='name'>
+							Name: </label>
+						<input
 							value={ this.state.name }
 							onChange={ (e) => {
 								this.handleChange(e, 'name')
 							} }
 							name='person[name]'
+							id='name'
 						/>
 					</p>
 					<p>
-						Instrument: <input
+						<label htmlFor='instrument'>
+							Instrument: </label>
+						<input
 							value={ this.state.instrument }
 							onChange={ (e) => {
 								this.handleChange(e, 'instrument')
 							} }
 							name='person[instrument]'
+							id='instrument'
 						/>
 					</p>
 					<p>
-						Favorite City: <input
+						<label htmlFor='favorite-city'>
+							Favorite City: </label>
+						<input
 							value={ this.state.favoriteCity }
 							onChange={ (e) => {
 								this.handleChange(e, 'favoriteCity')
 							} }
 							name='person[favorite_city]'
+							id='favorite-city'
 						/>
 						<input type='submit' />
 					</p>
