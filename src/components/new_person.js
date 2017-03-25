@@ -38,8 +38,8 @@ class NewPerson extends Component {
 			.then(function(res){
 				return res.json()
 			})
-			.then(function(updatedData){
-				return updatedData
+			.then(function(newData){
+				return newData
 			})
 
 		this.props.actions.changeActivePerson(newPerson)

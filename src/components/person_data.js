@@ -5,6 +5,15 @@ export default function PersonData(props) {
 		return(
 			<div className='person-data'>
 				<h1>{ props.name }</h1>
+				<p>
+					<a
+						href={`http://coolpeople.herokuapp.com/api/v1/people/${props.id}`}
+						target='_blank'
+						className='link crud'
+						>
+						Click to View JSON
+					</a>
+				</p>
 	  		<p>
 	  			Instrument: { props.instrument }
 	  		</p>

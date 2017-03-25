@@ -14,6 +14,7 @@ strong {
 .link {
 	color: blue;
 	cursor: pointer;
+	text-decoration: none;
 }
 
 .link:hover {
