@@ -8,7 +8,7 @@ body {
 }
 
 strong {
-	color: rgb(20, 20, 180);
+	color: rgb(140, 200, 256);
 }
 
 .link {
@@ -33,11 +33,11 @@ strong {
 }
 
 #App-header {
-	background: rgba(256, 256, 256, 0.8);
+	background: rgba(90, 5, 80, 0.4);
 	padding: 0.1em;
 	margin: 1em;
 	border-radius: 1em;
-  color: #222;
+  color: #fff;
 
 }
 
@@ -45,7 +45,7 @@ strong {
 	padding: 1em;
 	margin: 1em;
 	border-radius: 2em;
-	background: rgba(256, 256, 256, 0.8);
+	background: inherit;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -54,7 +54,7 @@ strong {
 }
 
 #people-list {
-	background: rgba(170, 40, 70, 0.4);
+	background: rgba(170, 40, 70, 0.9);
 	padding: 1em;
 	border-radius: 2.5em;
 	border: 1px black solid;
@@ -70,7 +70,7 @@ strong {
 }
 
 .person-detail {
-	background: rgba(100, 160, 120, 0.4);
+	background: rgba(100, 160, 120, 0.9);
 	border-radius: 2.5em;
 	border: 1px black solid;
 	width: 24em;
@@ -81,7 +81,7 @@ strong {
 }
 
 #new-person {
-	background: rgba(70, 90, 190, 0.4);
+	background: rgba(70, 90, 190, 0.9);
 	padding: 2em;
 	border-radius: 2.5em;
 	border: 1px black solid;	

@@ -1,5 +1,6 @@
 const baseUrl = 'https://coolpeople.herokuapp.com/api/v1'
 
+
 export function fetchPeople(){
 	const people = fetch(`${baseUrl}/people`)
 	.then(response => {

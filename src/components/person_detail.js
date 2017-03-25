@@ -7,7 +7,8 @@ import EditLink from './edit_link'
 import PersonData from './person_data'
 import DeleteLink from './delete_link'
 import DeletedPerson from './deleted_person'
-import BaseUrl from './base_url'
+
+const baseUrl = 'https://coolpeople.herokuapp.com/api/v1'
 
 class PersonDetail extends Component {
 	constructor(props){
@@ -32,7 +33,7 @@ class PersonDetail extends Component {
 	}
 
 	handleDelete(){
-		fetch(`${<BaseUrl />}/people/${this.props.id}`, {
+		fetch(`${baseUrl}/people/${this.props.id}`, {
 			method: 'DELETE',
 			headers: {
 				'Accept': 'application/json',

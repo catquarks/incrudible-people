@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actions from '../actions'
-import BaseUrl from './base_url'
+
+const baseUrl = 'https://coolpeople.herokuapp.com/api/v1'
 
 class EditForm extends Component {
 	constructor(props){
@@ -30,7 +31,7 @@ class EditForm extends Component {
 		const instrument = this.state.newInstrument
 		const favoriteCity = this.state.newFavoriteCity
 
-		const updatedPerson = fetch(`${<BaseUrl />}/people/${this.props.id}`, {
+		const updatedPerson = fetch(`${baseUrl}/people/${this.props.id}`, {
 			method: 'PUT',
 			headers: {
 				'Accept': 'application/json',

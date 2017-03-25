@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actions from '../actions'
-import BaseUrl from './base_url'
+
+const baseUrl = 'https://coolpeople.herokuapp.com/api/v1'
 
 class NewPerson extends Component {
 	constructor(props){
@@ -22,7 +23,7 @@ class NewPerson extends Component {
 		const instrument = this.state.instrument
 		const favoriteCity = this.state.favoriteCity
 
-		const updatedPerson = fetch(`${<BaseUrl />}/people`, {
+		const newPerson = fetch(`${baseUrl}/people`, {
 			method: 'POST',
 			headers: {
 				'Accept': 'application/json',
@@ -41,7 +42,7 @@ class NewPerson extends Component {
 				return updatedData
 			})
 
-		this.props.actions.changeActivePerson(updatedPerson)
+		this.props.actions.changeActivePerson(newPerson)
 		this.clearForm()
 	}
 
