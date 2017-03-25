@@ -7,8 +7,7 @@ import EditLink from './edit_link'
 import PersonData from './person_data'
 import DeleteLink from './delete_link'
 import DeletedPerson from './deleted_person'
-
-const baseUrl = 'https://coolpeople.herokuapp.com/api/v1'
+import baseUrl from '../base_url'
 
 class PersonDetail extends Component {
 	constructor(props){

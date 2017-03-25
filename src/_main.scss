@@ -1,13 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed');
 $baby-blue: rgb(140, 200, 255);
 
-
 body {
+	font-family: 'Fira Sans Condensed', sans-serif;
 	font-size: 1rem;
 	background: url('images/music-bg.jpg') fixed;
 	/* background image from pixabay.com */
   margin: auto;
   padding: 0;
-  font-family: sans-serif;
 }
 
 form {
@@ -26,8 +26,6 @@ input[type=submit]{
 	margin: 0.5em auto 0em auto;
 }
 
-
-
 strong {
 	color: $baby-blue;
 }
@@ -36,14 +34,15 @@ strong {
 	color: #fff;
 	cursor: pointer;
 	text-decoration: none;
-}
 
-.link:hover {
-	color: #eaa;
-}
+	&:hover {
+		color: #eaa;
+	}
 
-.link:active {
-	color: #0ac;
+	&:active {
+		color: #0ac;
+	}
+	
 }
 
 .crud {
@@ -60,7 +59,7 @@ strong {
 	margin: 1em;
 	border-radius: 1em;
   color: #fff;
-
+  font-size: 1.2em;
 }
 
 #app-body {
@@ -88,7 +87,6 @@ strong {
 	width: inherit;
 	height: 20em;
 	overflow: auto;
-
 }
 
 .person-detail {
@@ -102,10 +100,6 @@ strong {
 	input[type=submit]{
 		background: darken($background-color, 12%);
 	}
-}
-
-
-.person-data {
 }
 
 #new-person {
