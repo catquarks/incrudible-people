@@ -60,7 +60,7 @@ input[type=submit] {
   align-items: center; }
 
 #people-list {
-  background: linear-gradient(to right bottom, #be3c5a, #842a3e);
+  background: linear-gradient(to right bottom, rgba(190, 60, 90, 0.95), rgba(132, 42, 62, 0.95));
   padding: 1em;
   border-radius: 2.5em;
   border: 2px black solid;
@@ -73,21 +73,21 @@ input[type=submit] {
   overflow: auto; }
 
 .person-detail {
-  background: linear-gradient(to right top, #64a078, #4f8260);
+  background: linear-gradient(to right top, rgba(100, 160, 120, 0.95), rgba(79, 130, 96, 0.95));
   border-radius: 2.5em;
   border: 2px black solid;
   width: 24em;
   padding: 2em; }
   .person-detail input[type=submit] {
-    background: #4c7b5b; }
+    background: rgba(76, 123, 91, 0.95); }
 
 #new-person {
-  background: linear-gradient(to left top, #465abe, #7f8cd2);
+  background: linear-gradient(to left top, rgba(70, 90, 190, 0.95), rgba(127, 140, 210, 0.95));
   padding: 2em;
   border-radius: 2.5em;
   border: 2px black solid; }
   #new-person input[type=submit] {
-    background: #a4aedf; }
+    background: rgba(164, 174, 223, 0.95); }
 
 .error p {
   border-radius: 1em;
