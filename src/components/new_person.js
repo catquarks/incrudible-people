@@ -45,7 +45,7 @@ class NewPerson extends Component {
 				this.setState({
 					errors: true
 				})
-					return res.json()
+				return res.json()
 			})
 			.then( newData => {
 				return newData

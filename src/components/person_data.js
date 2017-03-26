@@ -9,7 +9,7 @@ export default function PersonData(props) {
 					<a
 						href={`http://coolpeople.herokuapp.com/api/v1/people/${props.id}`}
 						target='_blank'
-						className='link'
+						className='link crud'
 						>
 						Click to View JSON
 					</a>

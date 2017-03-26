@@ -77,7 +77,6 @@ class PersonDetail extends Component {
 						handleEditMode={ this.handleEditMode.bind(this) }
 					/>
 				}
-
 				{
 					personClicked ?
 						<div>
@@ -91,7 +90,6 @@ class PersonDetail extends Component {
 						</div> :
 						null
 				}
-
 	    </div>
 		)
 	}
