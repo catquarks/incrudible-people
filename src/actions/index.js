@@ -1,5 +1,4 @@
-const baseUrl = 'https://coolpeople.herokuapp.com/api/v1'
-
+import baseUrl from '../base_url'
 
 export function fetchPeople(){
 	const people = fetch(`${baseUrl}/people`)

@@ -7,7 +7,8 @@ class PeopleList extends Component {
 	constructor(props){
 		super(props)
 		this.state = {
-			query: ''
+			query: '',
+			placeholder: 'Search here'
 		}
 
 		this.getPeople = this.getPeople.bind(this)
@@ -18,7 +19,8 @@ class PeopleList extends Component {
 	}
 
 	getPeople(query){
-		return this.props.people.filter( person => {
+		const people = this.alphabetizePeopleByName(this.props.people)
+		return people.filter( person => {
 			return person.name.toLowerCase().includes(query.toLowerCase())
 		} )
 	}
@@ -29,6 +31,33 @@ class PeopleList extends Component {
 		})
 	}
 
+	handleSubmit(e){
+		e.preventDefault()
+		e.stopPropagation()
+		this.setState({
+			placeholder: 'Try clicking a name!'
+		})
+	}
+
+	alphabetizePeopleByName(people){
+		const alphabeticalPeople = people.sort( (a, b) => {
+		const aName = a.name.toLowerCase()
+		const bName = b.name.toLowerCase()
+
+		if (aName < bName){
+			return -1
+		}
+
+		if (aName > bName){
+			return 1
+		}
+
+		return 0
+
+		})
+		return alphabeticalPeople
+	}
+
 	render(){
 		const people = this.getPeople(this.state.query)
 
@@ -36,10 +65,11 @@ class PeopleList extends Component {
 	    <div id="people-list">
 	    	<h1>Search for People</h1>
 
-	    	<form onSubmit={ this.handleSubmit }>
+	    	<form onSubmit={ this.handleSubmit.bind(this) }>
 	    		<input type='text'
 	    			value={ this.state.query }
 	    			onChange={ this.handleChange.bind(this) }
+	    			placeholder={ this.state.placeholder }
 	    			autoFocus
     			/>
 	    	</form>

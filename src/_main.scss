@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed');
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhaina|Fira+Sans+Condensed');
 $baby-blue: rgb(140, 200, 255);
 
 body {
@@ -24,10 +24,6 @@ input[type=submit]{
 	display: block;
 	padding: 0.3em;
 	margin: 0.5em auto 0em auto;
-}
-
-strong {
-	color: $baby-blue;
 }
 
 .link {
@@ -60,6 +56,12 @@ strong {
 	border-radius: 1em;
   color: #fff;
   font-size: 1.2em;
+
+  strong {
+		font-family: 'Baloo Bhaina', cursive;
+		color: $baby-blue;
+		text-shadow: 2px 1px 2px black;
+	}
 }
 
 #app-body {

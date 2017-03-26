@@ -9,10 +9,18 @@ export default function PersonData(props) {
 					<a
 						href={`http://coolpeople.herokuapp.com/api/v1/people/${props.id}`}
 						target='_blank'
-						className='link crud'
+						className='link'
 						>
 						Click to View JSON
 					</a>
+				</p>
+				<p>
+					<span
+						className='link'
+						onClick={ props.onOpenModal }
+					>
+						Click for Popup
+					</span>
 				</p>
 	  		<p>
 	  			Instrument: { props.instrument }

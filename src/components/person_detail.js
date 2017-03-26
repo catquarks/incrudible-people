@@ -8,13 +8,15 @@ import PersonData from './person_data'
 import DeleteLink from './delete_link'
 import DeletedPerson from './deleted_person'
 import baseUrl from '../base_url'
+import Modal from 'react-responsive-modal'
 
 class PersonDetail extends Component {
 	constructor(props){
 		super(props)
 		this.state = {
 			editMode: false,
-			deleted: false
+			deleted: false,
+			modalIsOpen: false
 		}
 	}
 
@@ -28,6 +30,18 @@ class PersonDetail extends Component {
 		const newEditMode = !this.state.editMode
 		this.setState({
 			editMode: newEditMode
+		})
+	}
+
+	onOpenModal(){
+		this.setState({
+			modalIsOpen: true
+		})
+	}
+
+	onCloseModal(){
+		this.setState({
+			modalIsOpen: false
 		})
 	}
 
@@ -60,6 +74,11 @@ class PersonDetail extends Component {
 
 		return(
 	    <div className="person-detail">
+	    	<Modal open={ this.state.modalIsOpen }
+	    		onClose={ this.onCloseModal.bind(this) }
+	    	>
+	    		hello
+	    	</Modal>
 				{
 					deleted ? <DeletedPerson handleReloadPeopleList={ this.handleReloadPeopleList.bind(this) } /> : null
 				}
@@ -68,6 +87,8 @@ class PersonDetail extends Component {
 						instrument={ this.props.instrument }
 						favoriteCity={this.props.favoriteCity }
 						id={ this.props.id }
+						onOpenModal={ this.onOpenModal.bind(this) }
+						onCloseModal={ this.onCloseModal.bind(this) }
 					/> :
 					<EditPerson
 						name={ this.props.name }
