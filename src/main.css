@@ -60,7 +60,7 @@ input[type=submit] {
   align-items: center; }
 
 #people-list {
-  background: #aa2846;
+  background: linear-gradient(to right bottom, #be3c5a, #842a3e);
   padding: 1em;
   border-radius: 2.5em;
   border: 2px black solid;
@@ -73,7 +73,7 @@ input[type=submit] {
   overflow: auto; }
 
 .person-detail {
-  background: #64a078;
+  background: linear-gradient(to right top, #64a078, #4f8260);
   border-radius: 2.5em;
   border: 2px black solid;
   width: 24em;
@@ -82,7 +82,7 @@ input[type=submit] {
     background: #4c7b5b; }
 
 #new-person {
-  background: #465abe;
+  background: linear-gradient(to left top, #465abe, #7f8cd2);
   padding: 2em;
   border-radius: 2.5em;
   border: 2px black solid; }

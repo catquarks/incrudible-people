@@ -77,7 +77,8 @@ input[type=submit]{
 }
 
 #people-list {
-	background: rgba(170, 40, 70, 1);
+	$background-color: rgba(190, 60, 90, 1);
+	background: linear-gradient(to right bottom, $background-color, darken($background-color, 15%));
 	padding: 1em;
 	border-radius: 2.5em;
 	border: 2px black solid;
@@ -93,7 +94,7 @@ input[type=submit]{
 
 .person-detail {
 	$background-color: rgba(100, 160, 120, 1);
-	background: $background-color;
+	background: linear-gradient(to right top, $background-color, darken($background-color, 10%));
 	border-radius: 2.5em;
 	border: 2px black solid;
 	width: 24em;
@@ -106,7 +107,7 @@ input[type=submit]{
 
 #new-person {
 	$background-color: rgba(70, 90, 190, 1);
-	background: $background-color;
+	background: linear-gradient(to left top, $background-color, lighten($background-color, 15%));
 	padding: 2em;
 	border-radius: 2.5em;
 	border: 2px black solid;
