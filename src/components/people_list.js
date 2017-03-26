@@ -31,6 +31,12 @@ class PeopleList extends Component {
 		})
 	}
 
+	handleBlur(){
+		this.setState({
+			placeholder: 'Search here'
+		})
+	}
+
 	handleSubmit(e){
 		e.preventDefault()
 		e.stopPropagation()
@@ -70,6 +76,7 @@ class PeopleList extends Component {
 	    			value={ this.state.query }
 	    			onChange={ this.handleChange.bind(this) }
 	    			placeholder={ this.state.placeholder }
+	    			onBlur={ this.handleBlur.bind(this) }
 	    			autoFocus
     			/>
 	    	</form>
