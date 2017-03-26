@@ -68,7 +68,6 @@ input[type=submit] {
   height: 30em; }
 
 .people-names {
-  width: inherit;
   height: 20em;
   overflow: auto; }
 

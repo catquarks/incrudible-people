@@ -44,6 +44,4 @@ export default function(props){
 			</p>
 		</form>
 	)
-
 }
-
