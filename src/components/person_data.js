@@ -14,14 +14,6 @@ export default function PersonData(props) {
 						Click to View JSON
 					</a>
 				</p>
-				<p>
-					<span
-						className='link'
-						onClick={ props.onOpenModal }
-					>
-						Click for Popup
-					</span>
-				</p>
 	  		<p>
 	  			Instrument: { props.instrument }
 	  		</p>
