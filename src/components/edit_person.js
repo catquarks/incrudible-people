@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actions from '../actions'
 import baseUrl from '../base_url'
+import ErrorMessages from './error_messages'
+import Form from './form'
 
 class EditPerson extends Component {
 	constructor(props){
@@ -10,7 +12,8 @@ class EditPerson extends Component {
 		this.state = {
 			newName: props.name,
 			newInstrument: props.instrument,
-			newFavoriteCity: props.favoriteCity
+			newFavoriteCity: props.favoriteCity,
+			errors: false
 		}
 	}
 
@@ -54,7 +57,6 @@ class EditPerson extends Component {
 	}
 
 	handleChange(e, field){
-
 		switch(field){
 			case 'name':
 				this.setState({
@@ -78,47 +80,17 @@ class EditPerson extends Component {
 
 	render(){
 		return(
-    	<form
-    		onSubmit={ (e) => { this.handleSubmit(e) } }
-  		>
-				<p>
-					<label htmlFor='name'>
-						Name: </label>
-					<input
-						value={ this.state.newName }
-						onChange={ (e) => {
-							this.handleChange(e, 'name')
-						} }
-						name='person[name]'
-						id='name'
-					/>
-				</p>
-				<p>
-					<label htmlFor='instrument'>
-						Instrument: </label>
-					<input
-						value={ this.state.newInstrument }
-						onChange={ (e) => {
-							this.handleChange(e, 'instrument')
-						} }
-						name='person[instrument]'
-						id='instrument'
-					/>
-				</p>
-				<p>
-					<label htmlFor='favorite-city'>
-						Favorite City: </label>
-					<input
-						value={ this.state.newFavoriteCity }
-						onChange={ (e) => {
-							this.handleChange(e, 'favoriteCity')
-						} }
-						name='person[favorite_city]'
-						id='favorite-city'
-					/>
-					<input type='submit' value='Update' />
-				</p>
-			</form>
+			<div>
+				{ this.state.errors? <ErrorMessages /> : null }
+				<Form
+					name={ this.state.newName }
+					instrument={ this.state.newInstrument }
+					favoriteCity={ this.state.newFavoriteCity }
+					handleChange={ this.handleChange.bind(this) }
+					handleSubmit={ this.handleSubmit.bind(this) }
+					buttonText='Update'
+				/>
+			</div>
 		)
 	}
 }

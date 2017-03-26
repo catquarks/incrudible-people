@@ -40,7 +40,7 @@ export default function(props){
 					name='person[favorite_city]'
 					id='favorite-city'
 				/>
-				<input type='submit' />
+				<input type='submit' value={ props.buttonText } />
 			</p>
 		</form>
 	)

@@ -91,6 +91,7 @@ class NewPerson extends Component {
 					favoriteCity={ this.state.favoriteCity }
 					handleChange={ this.handleChange.bind(this) }
 					handleSubmit={ this.handleSubmit.bind(this) }
+					buttonText='Submit'
 				/>
 			</div>
 		)
