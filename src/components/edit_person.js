@@ -45,10 +45,10 @@ class EditPerson extends Component {
 				favorite_city: favoriteCity
 			})
 		})
-			.then(function(res){
+			.then( res => {
 				return res.json()
 			})
-			.then(function(updatedData){
+			.then( updatedData => {
 				return updatedData
 			})
 

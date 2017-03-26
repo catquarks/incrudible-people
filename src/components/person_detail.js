@@ -39,14 +39,13 @@ class PersonDetail extends Component {
 				'Content-Type': 'application/json'
 			}
 		})
-			.then( res => {
-
-				this.setState({
-					deleted: true
-				})
-
-				return res
+		.then( res => {
+			this.setState({
+				deleted: true
 			})
+			
+			return res
+		})
 	}
 
 	handleReloadPeopleList(){
