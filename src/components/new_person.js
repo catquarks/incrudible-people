@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as actions from '../actions'
 import baseUrl from '../base_url'
+import ErrorMessages from './error_messages'
 
 class NewPerson extends Component {
 	constructor(props){
@@ -10,8 +11,10 @@ class NewPerson extends Component {
 		this.state = {
 			name: '',
 			instrument: '',
-			favoriteCity: ''
+			favoriteCity: '',
+			errors: false
 		}
+		this.handleSubmit = this.handleSubmit.bind(this)
 	}
 
 	handleSubmit(e){
@@ -34,10 +37,16 @@ class NewPerson extends Component {
 				favorite_city: favoriteCity
 			})
 		})
-			.then(function(res){
-				return res.json()
+			.then( res => {
+				if (res.ok){
+					return res.json()
+				}
+				this.setState({
+					errors: true
+				})
+					return res.json()
 			})
-			.then(function(newData){
+			.then( newData => {
 				return newData
 			})
 
@@ -74,6 +83,7 @@ class NewPerson extends Component {
 		return(
 			<div id="new-person">
 				<h1>Create a New Person</h1>
+				{ this.state.errors? <ErrorMessages /> : null }
 	    	<form
 	    		onSubmit={ (e) => { this.handleSubmit(e) } }
 	  		>
@@ -126,4 +136,10 @@ function mapDispatchToProps(dispatch){
 	})
 }
 
-export default connect(null, mapDispatchToProps)(NewPerson)
+function mapStateToProps(state){
+	return({
+		messages: state.activePerson
+	})
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewPerson)

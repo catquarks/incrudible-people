@@ -115,3 +115,11 @@ input[type=submit]{
 		background: lighten($background-color, 25%);
 	}
 }
+
+.error {
+	p {
+		border-radius: 1em;
+		background: red;
+		color: white;
+	}
+}

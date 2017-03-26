@@ -88,3 +88,8 @@ input[type=submit] {
   border: 1px black solid; }
   #new-person input[type=submit] {
     background: #a4aedf; }
+
+.error p {
+  border-radius: 1em;
+  background: red;
+  color: white; }
