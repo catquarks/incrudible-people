@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 import * as actions from '../actions'
 import baseUrl from '../base_url'
 import ErrorMessages from './error_messages'
+import Form from './form'
 
 class NewPerson extends Component {
 	constructor(props){
@@ -84,47 +85,13 @@ class NewPerson extends Component {
 			<div id="new-person">
 				<h1>Create a New Person</h1>
 				{ this.state.errors? <ErrorMessages /> : null }
-	    	<form
-	    		onSubmit={ (e) => { this.handleSubmit(e) } }
-	  		>
-					<p>
-						<label htmlFor='name'>
-							Name: </label>
-						<input
-							value={ this.state.name }
-							onChange={ (e) => {
-								this.handleChange(e, 'name')
-							} }
-							name='person[name]'
-							id='name'
-						/>
-					</p>
-					<p>
-						<label htmlFor='instrument'>
-							Instrument: </label>
-						<input
-							value={ this.state.instrument }
-							onChange={ (e) => {
-								this.handleChange(e, 'instrument')
-							} }
-							name='person[instrument]'
-							id='instrument'
-						/>
-					</p>
-					<p>
-						<label htmlFor='favorite-city'>
-							Favorite City: </label>
-						<input
-							value={ this.state.favoriteCity }
-							onChange={ (e) => {
-								this.handleChange(e, 'favoriteCity')
-							} }
-							name='person[favorite_city]'
-							id='favorite-city'
-						/>
-						<input type='submit' />
-					</p>
-				</form>
+				<Form
+					name={ this.state.name }
+					instrument={ this.state.instrument }
+					favoriteCity={ this.state.favoriteCity }
+					handleChange={ this.handleChange.bind(this) }
+					handleSubmit={ this.handleSubmit.bind(this) }
+				/>
 			</div>
 		)
 	}
