@@ -50,10 +50,10 @@ input[type=submit]{
 }
 
 #App-header {
-	background: rgba(90, 5, 80, 0.4);
+	background: rgba(90, 5, 80, 0.9);
 	padding: 0.1em;
-	margin: 1em;
-	border-radius: 1em;
+	/*margin: 1em;*/
+	/*border-radius: 1em;*/
   color: #fff;
   font-size: 1.2em;
 
@@ -80,7 +80,7 @@ input[type=submit]{
 	background: rgba(170, 40, 70, 1);
 	padding: 1em;
 	border-radius: 2.5em;
-	border: 1px black solid;
+	border: 2px black solid;
 	width: 20em;
 	height: 30em;
 }
@@ -95,7 +95,7 @@ input[type=submit]{
 	$background-color: rgba(100, 160, 120, 1);
 	background: $background-color;
 	border-radius: 2.5em;
-	border: 1px black solid;
+	border: 2px black solid;
 	width: 24em;
 	padding: 2em;
 
@@ -109,7 +109,7 @@ input[type=submit]{
 	background: $background-color;
 	padding: 2em;
 	border-radius: 2.5em;
-	border: 1px black solid;
+	border: 2px black solid;
 
 	input[type=submit]{
 		background: lighten($background-color, 25%);
