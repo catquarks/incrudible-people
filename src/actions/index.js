@@ -28,3 +28,16 @@ export function changeActivePerson(person){
 		payload: person
 	})
 }
+
+export function toggleErrorStatus(){
+	return({
+		type: 'TOGGLE_ERROR_STATUS'
+	})
+}
+
+export function setErrorMessages(messages){
+	return({
+		type: 'SET_ERROR_MESSAGES',
+		payload: messages
+	})
+}

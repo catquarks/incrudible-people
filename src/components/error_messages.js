@@ -6,7 +6,10 @@ export default function ErrorMessages(props){
 			<p>There were errors with your request:</p>
 			<ul>
 				{ props.messages.map( message => {
-					return <li>{ message }!</li>
+					var count = 0
+					var key = count
+					++count
+					return <li key={ key }>{ message }!</li>
 				} ) }
 			</ul>
 		</div>

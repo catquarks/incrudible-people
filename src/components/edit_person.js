@@ -13,7 +13,6 @@ class EditPerson extends Component {
 			newName: props.name,
 			newInstrument: props.instrument,
 			newFavoriteCity: props.favoriteCity,
-			errors: false
 		}
 	}
 
@@ -33,7 +32,23 @@ class EditPerson extends Component {
 		const instrument = this.state.newInstrument
 		const favoriteCity = this.state.newFavoriteCity
 
-		const updatedPerson = fetch(`${baseUrl}/people/${this.props.id}`, {
+		function handleErrors(res) {
+	    if (!res.ok) {
+	    	this.props.actions.toggleErrorStatus()
+	    }
+	    return res.json()
+		}
+
+		function handleData(res){
+			if (res[0] !== undefined){
+				this.props.actions.setErrorMessages(res)
+			} else {
+				this.props.actions.changeActivePerson(res)
+				this.props.handleEditMode()
+			}
+		}
+
+		fetch(`${baseUrl}/people/${this.props.id}`, {
 			method: 'PUT',
 			headers: {
 				'Accept': 'application/json',
@@ -45,15 +60,12 @@ class EditPerson extends Component {
 				favorite_city: favoriteCity
 			})
 		})
-			.then( res => {
-				return res.json()
-			})
-			.then( updatedData => {
-				return updatedData
-			})
+		.then( handleErrors.bind(this) )
+		.then( handleData.bind(this) )
+		.catch( err => {
+			console.log(err)
+		})
 
-		this.props.actions.changeActivePerson(updatedPerson)
-		this.props.handleEditMode()
 	}
 
 	handleChange(e, field){
@@ -81,7 +93,7 @@ class EditPerson extends Component {
 	render(){
 		return(
 			<div>
-				{ this.state.errors? <ErrorMessages /> : null }
+				{ this.props.errorStatus? <ErrorMessages messages={ this.props.errorMessages } /> : null }
 				<Form
 					name={ this.state.newName }
 					instrument={ this.state.newInstrument }
@@ -101,4 +113,11 @@ function mapDispatchToProps(dispatch){
 	})
 }
 
-export default connect(null, mapDispatchToProps)(EditPerson)
+function mapStateToProps(state){
+	return({
+		errorStatus: state.errorStatus,
+		errorMessages: state.errors
+	})
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditPerson)
