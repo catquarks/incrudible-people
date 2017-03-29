@@ -16,6 +16,7 @@ class PeopleList extends Component {
 
 	handleActivePerson(person){
 		this.props.actions.changeActivePerson(person)
+		this.props.actions.resetErrorStatus()
 	}
 
 	getPeople(query){

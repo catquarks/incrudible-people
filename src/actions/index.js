@@ -41,3 +41,9 @@ export function setErrorMessages(messages){
 		payload: messages
 	})
 }
+
+export function resetErrorStatus(){
+	return({
+		type: 'RESET_ERROR_STATUS'
+	})
+}

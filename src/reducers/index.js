@@ -9,7 +9,7 @@ const rootReducer = combineReducers({
 	people: PeopleReducer,
 	activePerson: ActivePersonReducer,
 	errorStatus: ErrorStatusReducer,
-	errors: ErrorMessagesReducer
+	errorMessages: ErrorMessagesReducer
 })
 
 export default rootReducer

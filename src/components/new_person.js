@@ -29,18 +29,14 @@ class NewPerson extends Component {
 
 		function handleErrors(res) {
 	    if (!res.ok) {
-    		this.setState({
-    			errors: true
-    		})
+	    	this.props.actions.toggleErrorStatus()
 	    }
 	    return res.json()
 		}
 
 		function handleData(res){
 			if (res[0] !== undefined){
-				this.setState({
-					errorMessages: res
-				})
+				this.props.actions.setErrorMessages(res)
 			} else {
 				this.props.actions.changeActivePerson(res)
 			}
@@ -96,7 +92,7 @@ class NewPerson extends Component {
 		return(
 			<div id="new-person">
 				<h1>Create a New Person</h1>
-				{ this.state.errors? <ErrorMessages messages={ this.state.errorMessages } /> : null }
+				{ this.props.errorStatus? <ErrorMessages messages={ this.props.errorMessages } /> : null }
 				<Form
 					name={ this.state.name }
 					instrument={ this.state.instrument }
@@ -118,7 +114,8 @@ function mapDispatchToProps(dispatch){
 
 function mapStateToProps(state){
 	return({
-		messages: state.activePerson
+		errorStatus: state.errorStatus,
+		errorMessages: state.errorMessages
 	})
 }
 

@@ -116,7 +116,7 @@ function mapDispatchToProps(dispatch){
 function mapStateToProps(state){
 	return({
 		errorStatus: state.errorStatus,
-		errorMessages: state.errors
+		errorMessages: state.errorMessages
 	})
 }
 
