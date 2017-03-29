@@ -118,8 +118,13 @@ input[type=submit]{
 
 .error {
 	p {
+		font-weight: bold;
 		border-radius: 1em;
 		background: red;
-		color: white;
+		color: white;		
+	}
+	
+	li {
+		color: rgb(255, 220, 190);
 	}
 }

@@ -89,6 +89,10 @@ input[type=submit] {
     background: rgba(164, 174, 223, 0.95); }
 
 .error p {
+  font-weight: bold;
   border-radius: 1em;
   background: red;
   color: white; }
+
+.error li {
+  color: #ffdcbe; }

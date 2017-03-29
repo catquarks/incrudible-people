@@ -13,7 +13,8 @@ class NewPerson extends Component {
 			name: '',
 			instrument: '',
 			favoriteCity: '',
-			errors: false
+			errors: false,
+			errorMessages: []
 		}
 		this.handleSubmit = this.handleSubmit.bind(this)
 	}
@@ -26,7 +27,26 @@ class NewPerson extends Component {
 		const instrument = this.state.instrument
 		const favoriteCity = this.state.favoriteCity
 
-		const newPerson = fetch(`${baseUrl}/people`, {
+		function handleErrors(res) {
+	    if (!res.ok) {
+    		this.setState({
+    			errors: true
+    		})
+	    }
+	    return res.json()
+		}
+
+		function handleData(res){
+			if (res[0] !== undefined){
+				this.setState({
+					errorMessages: res
+				})
+			} else {
+				this.props.actions.changeActivePerson(res)
+			}
+		}
+
+		fetch(`${baseUrl}/people`, {
 			method: 'POST',
 			headers: {
 				'Accept': 'application/json',
@@ -38,20 +58,12 @@ class NewPerson extends Component {
 				favorite_city: favoriteCity
 			})
 		})
-			.then( res => {
-				if (res.ok){
-					return res.json()
-				}
-				this.setState({
-					errors: true
-				})
-				return res.json()
-			})
-			.then( newData => {
-				return newData
-			})
-
-		this.props.actions.changeActivePerson(newPerson)
+		.then( handleErrors.bind(this) )
+		.then( handleData.bind(this) )
+		.catch( err => {
+			console.log(err)
+		})
+		
 		this.clearForm()
 	}
 
@@ -84,7 +96,7 @@ class NewPerson extends Component {
 		return(
 			<div id="new-person">
 				<h1>Create a New Person</h1>
-				{ this.state.errors? <ErrorMessages /> : null }
+				{ this.state.errors? <ErrorMessages messages={ this.state.errorMessages } /> : null }
 				<Form
 					name={ this.state.name }
 					instrument={ this.state.instrument }

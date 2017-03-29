@@ -1,9 +1,14 @@
 import React from 'react'
 
-export default function ErrorMessages(){
+export default function ErrorMessages(props){
 	return(
 		<div className='error'>
-			<p>There was an error with your request!</p>
+			<p>There were errors with your request:</p>
+			<ul>
+				{ props.messages.map( message => {
+					return <li>{ message }!</li>
+				} ) }
+			</ul>
 		</div>
 	)
 }
