@@ -25,10 +25,14 @@ class PersonDetail extends Component {
 	}
 
 	handleEditMode(){
+		// make this a whole app state with redux;
+		// then I can more easily control which component
+		// error messages show up on
 		const newEditMode = !this.state.editMode
 		this.setState({
 			editMode: newEditMode
 		})
+		this.props.actions.resetErrorStatus()
 	}
 
 	handleDelete(){
